@@ -20,7 +20,7 @@ jobs:
 
       - name: Download Source Code
         run: |
-          ./download_source.sh
+          bash ./download_source.sh
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
