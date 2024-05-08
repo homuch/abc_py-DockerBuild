@@ -25,6 +25,3 @@ mv ./abc_py-tmp/abc_py* ./source/abc_py
 rm -rf ./abc_py-tmp
 
 rm -f ./*.zip
-
-cp install_all.sh ./source/install_abc.sh
-cp install_all.sh ./source/install_pybind11.sh

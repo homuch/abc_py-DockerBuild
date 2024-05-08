@@ -23,6 +23,3 @@ Move-Item -Path "./abc_py-tmp/abc_py*" -Destination "./source/abc_py"
 Remove-Item -Path "./abc_py-tmp" -Force
 
 Remove-Item -Path "./*.zip" -Force
-
-Copy-Item -path install_all.sh -Destination ./source/install_abc.sh
-Copy-Item -path install_all.sh -Destination ./source/install_pybind11.sh
