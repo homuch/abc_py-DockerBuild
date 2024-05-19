@@ -22,14 +22,10 @@ jobs:
         run: |
           bash ./download_source.sh
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
           file: ./Dockerfile
           push: true
-          tags: chomu/abc_py:latest
-          platforms: linux/amd64,linux/arm64
+          tags: chomu/abc_py:latest, chomu/abc_py:amd64
