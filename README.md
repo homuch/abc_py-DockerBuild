@@ -6,7 +6,7 @@ It's a docker file for [abc_py](https://github.com/krzhu/abc_py). The image use 
 
 ```bash
   # in the directory of the Dockerfile
-  source download_source_mac.sh
+  source download_source_mac.sh # download_source_linux.sh, download_source_win.ps1
   docker build .
 ```
 
@@ -14,13 +14,14 @@ It's a docker file for [abc_py](https://github.com/krzhu/abc_py). The image use 
   
   ```bash
     # in the directory of the Dockerfile
+    # Use "docker images" to check the image id
     docker tag <image_id> chomu/abc_py:<platform> # amd64, arm64, ...
-    docker push chomu/abc_py:latest
+    docker push chomu/abc_py:<platform>
   ```
 
 ## Pull
   
   ```bash 
     # in any directory
-    docker pull chomu/abc_py:latest --platform <platform> # linux/amd64, linux/arm64, linux/arm/v8 ...
+    docker pull chomu/abc_py:latest --platform <platform> # linux/amd64, linux/arm64, ...
   ```
