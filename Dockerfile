@@ -19,15 +19,9 @@ RUN apt-get install -y libboost-all-dev doxygen
 SHELL ["/bin/bash", "-c"]
 
 RUN echo $'\n\
-export PYBIND11_DIR=/usr/src/pybind11 \n\
-export ABC_DIR=/usr/src/abc \n\
-export ARCH_FLAGS=$(/usr/src/abc/arch_flags)' >> ~/.bashrc
-
-# WORKDIR /usr/src/pybind11
-# COPY ./source/pybind11 /usr/src/pybind11
-# RUN cmake .
-# RUN make 
-# RUN make install
+    export PYBIND11_DIR=/usr/src/pybind11 \n\
+    export ABC_DIR=/usr/src/abc \n\
+    export ARCH_FLAGS=$(/usr/src/abc/arch_flags)' >> ~/.bashrc
 
 WORKDIR /usr/src/abc_py
 COPY --from=builder-abc /usr/src/abc /usr/src/abc
@@ -43,8 +37,6 @@ WORKDIR /usr/src
 RUN python3 -m venv /abc_py-venv && \
     . ~/.bashrc && \
     /abc_py-venv/bin/pip install abc_py/
-# RUN apt-get remove -y make cmake gcc g++ libboost-all-dev doxygen
-# RUN apt-get autoremove -y
 
 FROM python:3.12.3-slim
 COPY --from=builder-abc_py /abc_py-venv /abc_py-venv
