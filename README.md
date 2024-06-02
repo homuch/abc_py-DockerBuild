@@ -23,5 +23,5 @@ It's a docker file for [abc_py](https://github.com/krzhu/abc_py). The image use 
   
   ```bash 
     # in any directory
-    docker pull chomu/abc_py:latest --platform <platform> # linux/amd64, linux/arm64, ...
+    docker pull chomu/abc_py:<platform> # amd64, arm64, ...
   ```
